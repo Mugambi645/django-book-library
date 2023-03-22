@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("users.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
+    path("", include("home.urls")),
 ]
 ##development media and static files settings
 if settings.DEBUG:
