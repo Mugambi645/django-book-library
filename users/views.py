@@ -20,7 +20,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request,user)
-            return render(request,'home/index.html')
+            return render(request,'index.html')
     context['form']=form
     return render(request,'registration/register.html',context)
 @login_required

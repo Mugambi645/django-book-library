@@ -1,0 +1,31 @@
+
+<nav class="navbar navbar-expand-lg navbar-light py-4">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="https://library.livecanvas.com/sections/">
+			<img class="img-fluid" src="https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="48px" height="48px">
+		</a>Book Library
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav_lc" aria-controls="nav_lc" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="nav_lc">
+			<ul class="navbar-nav my-3 my-lg-0 ms-lg-3 me-auto">
+				<li class="nav-item me-4"><a class="nav-link" href="#">Home</a></li>
+				<li class="nav-item me-4"><a class="nav-link" href="#">Upload Book</a></li>
+	
+                    <form method="get" id="searchform" role="search" action="/">
+    
+                        <label class="visually-hidden" for="s"> Search </label>
+                        <div class="input-group">
+                            <input class="field form-control" id="s" name="s" type="text" placeholder="Search book.." value="">
+                            <input class="submit btn btn-primary" id="searchsubmit" name="submit" type="submit" value="Search">
+                        </div>
+                    </form>
+             
+			</ul>
+            
+			<div><a class="btn btn-outline-secondary me-2" href="{% url 'login' %}">Sign In</a>
+                <a class="btn btn-primary" href="{% url 'users:register' %}">Sign Up</a>
+            </div>
+		</div>
+	</div>
+</nav>
