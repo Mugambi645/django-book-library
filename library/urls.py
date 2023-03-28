@@ -22,4 +22,5 @@ urlpatterns = [
     path("", include("users.urls", namespace="users")),
     path("accounts/", include("django.contrib.auth.urls")),
     path("", include("home.urls", namespace="home")),
+    path("", include("booksapp.urls", namespace="booksapp")),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

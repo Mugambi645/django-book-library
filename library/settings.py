@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     "bootstrap3",
+    'booksapp'
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 MIDDLEWARE = [
