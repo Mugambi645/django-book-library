@@ -19,17 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include("users.urls")),
+    path("", include("users.urls", namespace="users")),
     path("accounts/", include("django.contrib.auth.urls")),
-    path("", include("home.urls")),
-]
-##development media and static files settings
-if settings.DEBUG:
-    urlpatterns += static(
-        settings.MEDIA_URL, 
-        document_root=settings.MEDIA_ROOT)
-    
-if settings.DEBUG:
-    urlpatterns+= static(
-    settings.STATIC_URL, 
-    document_root = settings.STATIC_ROOT)   
+    path("", include("home.urls", namespace="home")),
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
