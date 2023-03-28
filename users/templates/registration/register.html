@@ -5,12 +5,9 @@
  
 {% load crispy_forms_tags %}
   <div class="container" style="margin-top: 5rem; margin-bottom: 8rem; ">
-    <div class="row justify-content-md-center">
- 
-          <div class="col col-lg-4" style="background-color: wheat;">
-    
+    <div class="row justify-content-md-center ">
+          <div class="col col-lg-5 border">
           <h2 class="text-center">Register</h2>
-    
     <form method="post">
         {% csrf_token %}
 
@@ -18,33 +15,10 @@
         <center><button class="btn btn-outline-info" value="Register" type="submit">Register</center>
     </form>
     
-   Already have an account? <a href="{% url 'login' %}">Login</a>
+  <span class="text-small">Already have an account? <a href="{% url 'login' %}">Login here</a></span>
       </div>
     </div>
-    <div class="container">
-      <div class="row justify-content-md-center">
-        <div class="col col-lg-6">
-
+  
  </div>
    
-
-
-
-<script>
-    var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
-var alertTrigger = document.getElementById('liveAlertBtn')
-
-function alert(message, type) {
-  var wrapper = document.createElement('div')
-  wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
-
-  alertPlaceholder.append(wrapper)
-}
-
-if (alertTrigger) {
-  alertTrigger.addEventListener('click', function () {
-    alert('You are one stop away from review time!Please create an account to proceed', 'success')
-  })
-}
-</script>
 {% endblock %}
