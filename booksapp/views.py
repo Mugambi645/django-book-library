@@ -24,3 +24,8 @@ def addbook(request):
         form=BookForm()
     return render(request, "books/add_book.html", {'form':form})
 
+
+class BookDetailView(LoginRequiredMixin,DetailView):
+    model = Book
+    template_name = 'books/book_detail.html'
+    context_object_name = 'object'
