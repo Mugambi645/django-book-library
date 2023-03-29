@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, get_object_or_404
 from .models import Book
 from .forms import BookForm
 from django.contrib.auth.decorators import login_required
@@ -29,3 +29,14 @@ class BookDetailView(LoginRequiredMixin,DetailView):
     model = Book
     template_name = 'books/book_detail.html'
     context_object_name = 'object'
+
+
+
+def deletebook(request, id):
+    book = get_object_or_404(Book, id=id) 
+    book.delete()
+    return redirect('home:index')
+
+
+def category(request):
+    return render(request, "books/category.html")
