@@ -7,4 +7,5 @@ urlpatterns = [
     path('deletebook/<int:pk>/', views.deletebook, name='deletebook'),
     path("category",views.category, name="category" ),
     path('search/', views.lsearch, name='search'),
+    path('updatebook/<int:pk>', views.LEditView.as_view(), name='updatebook'),
 ]

@@ -8,6 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from . import models
 import operator
 import itertools
+from django.urls import reverse_lazy
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 @login_required
@@ -109,4 +110,13 @@ def lsearch(request):
                 if files:
                     return render(request,'books/results.html',{'files':files,'word':word})
                 return render(request,'books/results.html',{'files':files,'word':word})
+
+
+	
+class LEditView(LoginRequiredMixin,UpdateView):
+	model = Book
+	form_class = BookForm
+	template_name = 'books/editbook.html'
+	success_url = reverse_lazy('home:index')
+	success_message = 'Data was updated successfully'
 
